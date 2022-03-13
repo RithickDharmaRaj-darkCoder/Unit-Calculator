@@ -246,6 +246,7 @@ def convert(n1):
         calculate = number1
         label_result.cget('text')
         label_result.configure(text = (calculate, 'GHz'))
+
     ## Length
     # Millimeter to other
     elif result_from == 'Millimeter' and result_to == 'Millimeter':
@@ -353,6 +354,114 @@ def convert(n1):
         label_result.cget('text')
         label_result.configure(text = (calculate, 'km'))
 
+    ## Mass
+    # Milligram to other
+    elif result_from == 'Milligram' and result_to == 'Milligram':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mg'))
+    elif result_from == 'Milligram' and result_to == 'Centigram':
+        calculate = number1/10
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'cg'))
+    elif result_from == 'Milligram' and result_to == 'Gram':
+        calculate = number1/1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'g/gm'))
+    elif result_from == 'Milligram' and result_to == 'Decigram':
+        calculate = number1/100
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dg'))
+    elif result_from == 'Milligram' and result_to == 'Kilogram':
+        calculate = number1/1000000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'kg'))
+    # Centigram to other
+    elif result_from == 'Centigram' and result_to == 'Milligram':
+        calculate = number1*10
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mg'))
+    elif result_from == 'Centigram' and result_to == 'Centigram':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'cg'))
+    elif result_from == 'Centigram' and result_to == 'Gram':
+        calculate = number1/100
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'g/gm'))
+    elif result_from == 'Centigram' and result_to == 'Decigram':
+        calculate = number1/10
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dg'))
+    elif result_from == 'Centigram' and result_to == 'Kilogram':
+        calculate = number1/100000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'kg'))
+    # Gram to other
+    elif result_from == 'Gram' and result_to == 'Milligram':
+        calculate = number1*1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mg'))
+    elif result_from == 'Gram' and result_to == 'Centigram':
+        calculate = number1*100
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'cg'))
+    elif result_from == 'Gram' and result_to == 'Gram':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'g/gm'))
+    elif result_from == 'Gram' and result_to == 'Decigram':
+        calculate = number1*10
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dg'))
+    elif result_from == 'Gram' and result_to == 'Kilogram':
+        calculate = number1/1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'kg'))
+    # Decigram to other
+    elif result_from == 'Decigram' and result_to == 'Milligram':
+        calculate = number1*100
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mg'))
+    elif result_from == 'Decigram' and result_to == 'Centigram':
+        calculate = number1*10
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'cg'))
+    elif result_from == 'Decigram' and result_to == 'Gram':
+        calculate = number1/10
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'g/gm'))
+    elif result_from == 'Decigram' and result_to == 'Decigram':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dg'))
+    elif result_from == 'Decigram' and result_to == 'Kilogram':
+        calculate = number1/10000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'kg'))
+    # Kilogram to other
+    elif result_from == 'Kilogram' and result_to == 'Milligram':
+        calculate = number1*1000000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mg'))
+    elif result_from == 'Kilogram' and result_to == 'Centigram':
+        calculate = number1*100000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'cg'))
+    elif result_from == 'Kilogram' and result_to == 'Gram':
+        calculate = number1*1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'g/gm'))
+    elif result_from == 'Kilogram' and result_to == 'Decigram':
+        calculate = number1*10000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dg'))
+    elif result_from == 'Kilogram' and result_to == 'Kilogram':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'kg'))
+
+
 # Selected Function
 def selected(event):
     unit = event.widget.get()
@@ -393,13 +502,13 @@ def selected(event):
         combo_from['values'] = ('Milligram',
                                 'Centigram',
                                 'Gram',
-                                'DeciGram',
-                                'KiloGram')
+                                'Decigram',
+                                'Kilogram')
         combo_to['values'] = ('Milligram',
                               'Centigram',
                               'Gram',
-                              'DeciGram',
-                              'KiloGram')
+                              'Decigram',
+                              'Kilogram')
     elif unit == 'Speed':
         combo_from['values'] = ('Miles per Hour',
                                 'Foot per Second',
