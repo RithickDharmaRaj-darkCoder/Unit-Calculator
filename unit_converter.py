@@ -568,6 +568,47 @@ def convert(n1):
         label_result.cget('text')
         label_result.configure(text = (calculate, 'kn(kt)'))
 
+    ## Temperature
+    # Celsius to other
+    elif result_from == 'Celsius' and result_to == 'Celsius':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, '°C'))
+    elif result_from == 'Celsius' and result_to == 'Fahrenheit':
+        calculate = (number1 * (9/5)) + 32
+        label_result.cget('text')
+        label_result.configure(text = (calculate, '°F'))
+    elif result_from == 'Celsius' and result_to == 'Kelvin':
+        calculate = number1 + 273.15
+        label_result.cget('text')
+        label_result.configure(text = (calculate, '°K'))
+    # Fahrenheit to other
+    elif result_from == 'Fahrenheit' and result_to == 'Celsius':
+        calculate = (number1 - 32)*(5/9)
+        label_result.cget('text')
+        label_result.configure(text = (calculate, '°C'))
+    elif result_from == 'Fahrenheit' and result_to == 'Fahrenheit':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, '°F'))
+    elif result_from == 'Fahrenheit' and result_to == 'Kelvin':
+        calculate = (number1 - 32)*(5/9) + 273.15
+        label_result.cget('text')
+        label_result.configure(text = (calculate, '°K'))
+    # Kelvin to other
+    elif result_from == 'Kelvin' and result_to == 'Celsius':
+        calculate = number1 - 273.15
+        label_result.cget('text')
+        label_result.configure(text = (calculate, '°C'))
+    elif result_from == 'Kelvin' and result_to == 'Fahrenheit':
+        calculate = (number1 - 273.15)*(9/5) + 32
+        label_result.cget('text')
+        label_result.configure(text = (calculate, '°F'))
+    elif result_from == 'Kelvin' and result_to == 'Kelvin':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, '°K'))
+
 
 # Selected Function
 def selected(event):

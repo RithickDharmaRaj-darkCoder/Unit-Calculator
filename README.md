@@ -36,5 +36,9 @@
    Knot
    
 6. Temperature.
+   Celsius
+   Fahrenheit
+   Kelvin
+   
 7. Volume.
 8. Time.
