@@ -29,6 +29,12 @@
    Kilogram
    
 5. Speed.
+   Miles per Hour
+   Foot per Second
+   Meter per Second
+   Kilometer per Hour
+   Knot
+   
 6. Temperature.
 7. Volume.
 8. Time.

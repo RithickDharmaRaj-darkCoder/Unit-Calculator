@@ -21,7 +21,7 @@ font2 = font.Font(family='helvetica', size='20')
 def convert(n1):
     num1 = n1.get()
     try:
-        number1 = int(num1)
+        number1 = float(num1)
     except:
         messagebox.showerror('Error','Term not recognised')
 
@@ -367,7 +367,7 @@ def convert(n1):
     elif result_from == 'Milligram' and result_to == 'Gram':
         calculate = number1/1000
         label_result.cget('text')
-        label_result.configure(text = (calculate, 'g/gm'))
+        label_result.configure(text = (calculate, 'g(gm)'))
     elif result_from == 'Milligram' and result_to == 'Decigram':
         calculate = number1/100
         label_result.cget('text')
@@ -388,7 +388,7 @@ def convert(n1):
     elif result_from == 'Centigram' and result_to == 'Gram':
         calculate = number1/100
         label_result.cget('text')
-        label_result.configure(text = (calculate, 'g/gm'))
+        label_result.configure(text = (calculate, 'g(gm)'))
     elif result_from == 'Centigram' and result_to == 'Decigram':
         calculate = number1/10
         label_result.cget('text')
@@ -409,7 +409,7 @@ def convert(n1):
     elif result_from == 'Gram' and result_to == 'Gram':
         calculate = number1
         label_result.cget('text')
-        label_result.configure(text = (calculate, 'g/gm'))
+        label_result.configure(text = (calculate, 'g(gm)'))
     elif result_from == 'Gram' and result_to == 'Decigram':
         calculate = number1*10
         label_result.cget('text')
@@ -430,7 +430,7 @@ def convert(n1):
     elif result_from == 'Decigram' and result_to == 'Gram':
         calculate = number1/10
         label_result.cget('text')
-        label_result.configure(text = (calculate, 'g/gm'))
+        label_result.configure(text = (calculate, 'g(gm)'))
     elif result_from == 'Decigram' and result_to == 'Decigram':
         calculate = number1
         label_result.cget('text')
@@ -451,7 +451,7 @@ def convert(n1):
     elif result_from == 'Kilogram' and result_to == 'Gram':
         calculate = number1*1000
         label_result.cget('text')
-        label_result.configure(text = (calculate, 'g/gm'))
+        label_result.configure(text = (calculate, 'g(gm)'))
     elif result_from == 'Kilogram' and result_to == 'Decigram':
         calculate = number1*10000
         label_result.cget('text')
@@ -460,6 +460,113 @@ def convert(n1):
         calculate = number1
         label_result.cget('text')
         label_result.configure(text = (calculate, 'kg'))
+
+    ## Speed
+    # Miles per Hour to other
+    elif result_from == 'Miles per Hour' and result_to == 'Miles per Hour':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mph'))
+    elif result_from == 'Miles per Hour' and result_to == 'Foot per Second':
+        calculate = number1*1.46667
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ft/s'))
+    elif result_from == 'Miles per Hour' and result_to == 'Meter per Second':
+        calculate = number1/2.237
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'm/sec'))
+    elif result_from == 'Miles per Hour' and result_to == 'Kilometer per Hour':
+        calculate = number1*1.60934
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'km/h'))
+    elif result_from == 'Miles per Hour' and result_to == 'Knot':
+        calculate = number1/1.151
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'kn(kt)'))
+    # Foot per Second to other
+    elif result_from == 'Foot per Second' and result_to == 'Miles per Hour':
+        calculate = number1/1.46667
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mph'))
+    elif result_from == 'Foot per Second' and result_to == 'Foot per Second':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ft/s'))
+    elif result_from == 'Foot per Second' and result_to == 'Meter per Second':
+        calculate = number1/3.281
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'm/sec'))
+    elif result_from == 'Foot per Second' and result_to == 'Kilometer per Hour':
+        calculate = number1*1.097
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'km/h'))
+    elif result_from == 'Foot per Second' and result_to == 'Knot':
+        calculate = number1/1.688
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'kn(kt)'))
+    # Meter per Second to other
+    elif result_from == 'Meter per Second' and result_to == 'Miles per Hour':
+        calculate = number1*2.237
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mph'))
+    elif result_from == 'Meter per Second' and result_to == 'Foot per Second':
+        calculate = number1*3.28084
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ft/s'))
+    elif result_from == 'Meter per Second' and result_to == 'Meter per Second':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'm/sec'))
+    elif result_from == 'Meter per Second' and result_to == 'Kilometer per Hour':
+        calculate = number1*3.6
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'km/h'))
+    elif result_from == 'Meter per Second' and result_to == 'Knot':
+        calculate = number1*1.94384
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'kn(kt)'))
+    # Kilometer per Hour to other
+    elif result_from == 'Kilometer per Hour' and result_to == 'Miles per Hour':
+        calculate = number1/1.609
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mph'))
+    elif result_from == 'Kilometer per Hour' and result_to == 'Foot per Second':
+        calculate = number1/1.097
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ft/s'))
+    elif result_from == 'Kilometer per Hour' and result_to == 'Meter per Second':
+        calculate = number1/3.6
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'm/sec'))
+    elif result_from == 'Kilometer per Hour' and result_to == 'Kilometer per Hour':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'km/h'))
+    elif result_from == 'Kilometer per Hour' and result_to == 'Knot':
+        calculate = number1/1.852
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'kn(kt)'))
+    # Knot Hour to other
+    elif result_from == 'Knot' and result_to == 'Miles per Hour':
+        calculate = number1*1.15078
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mph'))
+    elif result_from == 'Knot' and result_to == 'Foot per Second':
+        calculate = number1*1.68781
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ft/s'))
+    elif result_from == 'Knot' and result_to == 'Meter per Second':
+        calculate = number1/1.944
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'm/sec'))
+    elif result_from == 'Knot' and result_to == 'Kilometer per Hour':
+        calculate = number1*1.852
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'km/h'))
+    elif result_from == 'Knot' and result_to == 'Knot':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'kn(kt)'))
 
 
 # Selected Function
@@ -634,9 +741,9 @@ combo_to.current()
 combo_to.bind('<<ComboboxSelected>>', tofunc)
 
 # Creating Result_section Lable
-label_result =tk.Label(window, text='', bg='white', width=20)
+label_result =tk.Label(window, text='', bg='white', width=28)
 label_result['font'] = font2
-label_result.place(relx=0.21, rely=0.6)
+label_result.place(relx=0.045, rely=0.6)
 
 # Creating Convert Button
 btn_convert = tk.Button(window, text='Convert', bg='red', fg='white', command=convert)
