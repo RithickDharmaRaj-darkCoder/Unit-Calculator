@@ -24,6 +24,7 @@ def convert(n1):
         number1 = int(num1)
     except:
         messagebox.showerror('Error','Term not recognised')
+
     ## Digital Storage
     # Byte to other
     if result_from == 'Byte' and result_to == 'Byte':
@@ -70,7 +71,7 @@ def convert(n1):
     elif result_from == 'KiloByte' and result_to == 'TeraByte':
         calculate = number1*1073741824
         label_result.cget('text')
-        label_result.configure(text = (calculate, result_to))
+        label_result.configure(text = (calculate, 'TB'))
     elif result_from == 'KiloByte' and result_to == 'PetaByte':
         calculate = number1*1099511627776
         label_result.cget('text')
@@ -174,7 +175,77 @@ def convert(n1):
     elif result_from == 'PetaByte' and result_to == 'PetaByte':
         calculate = number1
         label_result.cget('text')
-        label_result.configure(text = (calculate, result_to))
+        label_result.configure(text = (calculate, 'PB'))
+
+    ## Frequency
+    # Hertz to other
+    elif result_from == 'Hertz' and result_to == 'Hertz':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'Hz'))
+    elif result_from == 'Hertz' and result_to == 'Kilohertz':
+        calculate = number1/1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'kHz'))
+    elif result_from == 'Hertz' and result_to == 'Megahertz':
+        calculate = number1/1000000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'MHz'))
+    elif result_from == 'Hertz' and result_to == 'Gigahertz':
+        calculate = number1/1000000000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'GHz'))
+    # Kilohertz to other
+    elif result_from == 'Kilohertz' and result_to == 'Hertz':
+        calculate = number1*1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'Hz'))
+    elif result_from == 'Kilohertz' and result_to == 'Kilohertz':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'kHz'))
+    elif result_from == 'Kilohertz' and result_to == 'Megahertz':
+        calculate = number1/1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'MHz'))
+    elif result_from == 'Kilohertz' and result_to == 'Gigahertz':
+        calculate = number1/1000000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'GHz'))
+    # Megahertz to other
+    elif result_from == 'Megahertz' and result_to == 'Hertz':
+        calculate = number1*1000000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'Hz'))
+    elif result_from == 'Megahertz' and result_to == 'Kilohertz':
+        calculate = number1*1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'kHz'))
+    elif result_from == 'Megahertz' and result_to == 'Megahertz':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'MHz'))
+    elif result_from == 'Megahertz' and result_to == 'Gigahertz':
+        calculate = number1/1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'GHz'))
+    # Gigahertz to other
+    elif result_from == 'Gigahertz' and result_to == 'Hertz':
+        calculate = number1*1000000000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'Hz'))
+    elif result_from == 'Gigahertz' and result_to == 'Kilohertz':
+        calculate = number1*1000000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'kHz'))
+    elif result_from == 'Gigahertz' and result_to == 'Megahertz':
+        calculate = number1*1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'MHz'))
+    elif result_from == 'Gigahertz' and result_to == 'Gigahertz':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'GHz'))
 
 # Selected Function
 def selected(event):
