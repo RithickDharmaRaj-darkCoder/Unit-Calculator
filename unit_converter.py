@@ -18,28 +18,47 @@ font2 = font.Font(family='helvetica', size='20')
 
 # [All Functions]
 # Convert Function
-def convert():
-    pass
+def convert(n1):
+    num1 = n1.get()
+    try:
+        number1 = int(num1)
+    except:
+        messagebox.showerror('Error','Term not recognised')
+
+    if result_from == 'Byte' and result_to == 'Byte':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, result_to))
+    elif result_from == 'Byte' and result_to == 'Byte':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, result_to))
 
 # Selected Function
 def selected(event):
     unit = event.widget.get()
     if unit == 'Data Storage':
-        combo_from['values'] = ('byte',
+        combo_from['values'] = ('Byte',
                                 'KiloByte',
                                 'MegaByte',
                                 'GigaByte',
                                 'TeraByte',
                                 'PetaByte')
-        combo_to['values'] = ('byte',
+        combo_to['values'] = ('Byte',
                               'KiloByte',
                               'MegaByte',
                               'GigaByte',
                               'TeraByte',
                               'PetaByte')
     elif unit == 'Frequency':
-        combo_from['values'] = ()
-        combo_to['values'] = ()
+        combo_from['values'] = ('Hertz',
+                                'Kilohertz',
+                                'Megahertz',
+                                'Gigahertz')
+        combo_to['values'] = ('Hertz',
+                              'Kilohertz',
+                              'Megahertz',
+                              'Gigahertz')
     elif unit == 'Length':
         combo_from['values'] = ('Millimeters',
                                 'Centimeters',
@@ -63,11 +82,23 @@ def selected(event):
                               'Decigrams',
                               'Kilograms')
     elif unit == 'Speed':
-        combo_from['values'] = ()
-        combo_to['values'] = ()
+        combo_from['values'] = ('Miles per Hour',
+                                'Foot per Second',
+                                'Meter per Second',
+                                'Kilometer per Hour',
+                                'Knot')
+        combo_to['values'] = ('Miles per Hour',
+                              'Foot per Second',
+                              'Meter per Second',
+                              'Kilometer per Hour',
+                              'Knot')
     elif unit == 'Temperature':
-        combo_from['values'] = ()
-        combo_to['values'] = ()
+        combo_from['values'] = ('Celsius',
+                                'Fahrenheit',
+                                'Kelvin')
+        combo_to['values'] = ('Celsius',
+                              'Fahrenheit',
+                              'Kelvin')
     elif unit == 'Volume':
         combo_from['values'] = ('Cubic Meters',
                                 'Cubic Foot',
@@ -80,22 +111,30 @@ def selected(event):
                               'Gallon',
                               'Cubic Centimeters')
     elif unit == 'Time':
-        combo_from['values'] = ('Milliseconds',
-                                'Seconds',
-                                'Minutes',
-                                'Hours',
-                                'Days',
-                                'Weeks',
-                                'Months',
-                                'Years')
-        combo_to['values'] = ('Milliseconds',
-                                'Seconds',
-                                'Minutes',
-                                'Hours',
-                                'Days',
-                                'Weeks',
-                                'Months',
-                                'Years')
+        combo_from['values'] = ('Nanosecond',
+                                'Microsecond',
+                                'Millisecond',
+                                'Second',
+                                'Minute',
+                                'Hour',
+                                'Day',
+                                'Week',
+                                'Month',
+                                'Year',
+                                'Decade',
+                                'Century')
+        combo_to['values'] = ('Nanosecond',
+                              'Microsecond',
+                              'Millisecond',
+                              'Second',
+                              'Minute',
+                              'Hour',
+                              'Day',
+                              'Week',
+                              'Month',
+                              'Year',
+                              'Decade',
+                              'Century')
     else:
         pass
 
@@ -104,13 +143,11 @@ def selected(event):
 def fromfunc(event):
     global result_from
     result_from = event.widget.get()
-    print(result_from)
 
 # To Function
 def tofunc(event):
     global result_to
     result_to = event.widget.get()
-    print(result_to)
 
 # Creating the Unit Converter Label
 label_title = tk.Label(window, text='UNIT CONVERTER', bg='gray', fg='darkblue')
@@ -156,6 +193,7 @@ combo_from.bind('<<ComboboxSelected>>', fromfunc)
 entry_f = tk.StringVar()
 entry_from = tk.Entry(window, width=10, textvariable=entry_f)
 entry_from.place(relx=0.82, rely=0.36)
+convert = partial(convert, entry_f)
 
 
 # Creating 'To' Lable
