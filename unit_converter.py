@@ -24,12 +24,154 @@ def convert(n1):
         number1 = int(num1)
     except:
         messagebox.showerror('Error','Term not recognised')
-
+    ## Digital Storage
+    # Byte to other
     if result_from == 'Byte' and result_to == 'Byte':
         calculate = number1
         label_result.cget('text')
+        label_result.configure(text = (calculate, 'Byte'))
+    elif result_from == 'Byte' and result_to == 'KiloByte':
+        calculate = number1*0.0009765625
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'KB'))
+    elif result_from == 'Byte' and result_to == 'MegaByte':
+        calculate = number1*1048576
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'MB'))
+    elif result_from == 'Byte' and result_to == 'GigaByte':
+        calculate = number1*1073741824
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'GB'))
+    elif result_from == 'Byte' and result_to == 'TeraByte':
+        calculate = number1*1099511627776
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'TB'))
+    elif result_from == 'Byte' and result_to == 'PetaByte':
+        calculate = number1*1125899906842624
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'PB'))
+    # KiloByte to other
+    elif result_from == 'KiloByte' and result_to == 'Byte':
+        calculate = number1*1024
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'Byte'))
+    elif result_from == 'KiloByte' and result_to == 'KiloByte':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'KB'))
+    elif result_from == 'KiloByte' and result_to == 'MegaByte':
+        calculate = number1*0.0009765625
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'MB'))
+    elif result_from == 'KiloByte' and result_to == 'GigaByte':
+        calculate = number1*1048576
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'GB'))
+    elif result_from == 'KiloByte' and result_to == 'TeraByte':
+        calculate = number1*1073741824
+        label_result.cget('text')
         label_result.configure(text = (calculate, result_to))
-    elif result_from == 'Byte' and result_to == 'Byte':
+    elif result_from == 'KiloByte' and result_to == 'PetaByte':
+        calculate = number1*1099511627776
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'PB'))
+    # MegaByte to other
+    elif result_from == 'MegaByte' and result_to == 'Byte':
+        calculate = number1*1048576
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'Byte'))
+    elif result_from == 'MegaByte' and result_to == 'KiloByte':
+        calculate = number1*1024
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'KB'))
+    elif result_from == 'MegaByte' and result_to == 'MegaByte':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'MB'))
+    elif result_from == 'MegaByte' and result_to == 'GigaByte':
+        calculate = number1*0.0009765625
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'GB'))
+    elif result_from == 'MegaByte' and result_to == 'TeraByte':
+        calculate = number1*1048576
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'TB'))
+    elif result_from == 'MegaByte' and result_to == 'PetaByte':
+        calculate = number1*1073741824
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'PB'))
+    # GigaByte to other
+    elif result_from == 'GigaByte' and result_to == 'Byte':
+        calculate = number1*1073741824
+        label_result.cget('text')
+        label_result.configure(text = (calculate, result_to))
+    elif result_from == 'GigaByte' and result_to == 'KiloByte':
+        calculate = number1*1048576
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'KB'))
+    elif result_from == 'GigaByte' and result_to == 'MegaByte':
+        calculate = number1*1024
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'MB'))
+    elif result_from == 'GigaByte' and result_to == 'GigaByte':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'GB'))
+    elif result_from == 'GigaByte' and result_to == 'TeraByte':
+        calculate = number1*0.0009765625
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'TB'))
+    elif result_from == 'GigaByte' and result_to == 'PetaByte':
+        calculate = number1*1048576
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'PB'))
+    # TeraByte to other
+    elif result_from == 'TeraByte' and result_to == 'Byte':
+        calculate = number1*1099511627776
+        label_result.cget('text')
+        label_result.configure(text = (calculate, result_to))
+    elif result_from == 'TeraByte' and result_to == 'KiloByte':
+        calculate = number1*1073741824
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'KB'))
+    elif result_from == 'TeraByte' and result_to == 'MegaByte':
+        calculate = number1*1048576
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'MB'))
+    elif result_from == 'TeraByte' and result_to == 'GigaByte':
+        calculate = number1*1024
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'GB'))
+    elif result_from == 'TeraByte' and result_to == 'TeraByte':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'TB'))
+    elif result_from == 'TeraByte' and result_to == 'PetaByte':
+        calculate = number1*0.0009765625
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'PB'))
+    # PetaByte to other
+    elif result_from == 'PetaByte' and result_to == 'Byte':
+        calculate = number1*1125899906842624
+        label_result.cget('text')
+        label_result.configure(text = (calculate, result_to))
+    elif result_from == 'TPetaByte' and result_to == 'KiloByte':
+        calculate = number1*1099511627776
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'KB'))
+    elif result_from == 'PetaByte' and result_to == 'MegaByte':
+        calculate = number1*1073741824
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'MB'))
+    elif result_from == 'PetaByte' and result_to == 'GigaByte':
+        calculate = number1*1048576
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'GB'))
+    elif result_from == 'PetaByte' and result_to == 'TeraByte':
+        calculate = number1*1024
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'TB'))
+    elif result_from == 'PetaByte' and result_to == 'PetaByte':
         calculate = number1
         label_result.cget('text')
         label_result.configure(text = (calculate, result_to))
@@ -37,7 +179,7 @@ def convert(n1):
 # Selected Function
 def selected(event):
     unit = event.widget.get()
-    if unit == 'Data Storage':
+    if unit == 'Digital Storage':
         combo_from['values'] = ('Byte',
                                 'KiloByte',
                                 'MegaByte',
@@ -138,7 +280,6 @@ def selected(event):
     else:
         pass
 
-
 # From Function
 def fromfunc(event):
     global result_from
@@ -167,7 +308,7 @@ combo_unit.current()
 combo_unit.bind('<<ComboboxSelected>>', selected)
 
 # Unit Combobox Values
-combo_unit['values'] = ('Data Storage',
+combo_unit['values'] = ('Digital Storage',
                     'Frequency',
                     'Length',
                     'Mass',
@@ -175,7 +316,6 @@ combo_unit['values'] = ('Data Storage',
                     'Temperature',
                     'Volume',
                     'Time')
-
 
 # Creating 'From' Lable
 label_from = tk.Label(window, text='From', bg='gray', fg='black')
@@ -194,7 +334,6 @@ entry_f = tk.StringVar()
 entry_from = tk.Entry(window, width=10, textvariable=entry_f)
 entry_from.place(relx=0.82, rely=0.36)
 convert = partial(convert, entry_f)
-
 
 # Creating 'To' Lable
 label_to = tk.Label(window, text='To', bg='gray', fg='black')
