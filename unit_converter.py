@@ -9,7 +9,7 @@ from functools import partial
 window = tk.Tk()
 window.geometry('500x500')
 window.title('Unit Converter')
-window.configure(bg = 'gray')
+window.configure(bg = 'cyan2')
 
 # Creating the Fonts
 font_head = font.Font(family='helvetica', size='25')
@@ -246,6 +246,112 @@ def convert(n1):
         calculate = number1
         label_result.cget('text')
         label_result.configure(text = (calculate, 'GHz'))
+    ## Length
+    # Millimeter to other
+    elif result_from == 'Millimeter' and result_to == 'Millimeter':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mm'))
+    elif result_from == 'Millimeter' and result_to == 'Centimeter':
+        calculate = number1/10
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'cm'))
+    elif result_from == 'Millimeter' and result_to == 'Decimeter':
+        calculate = number1/100
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dm'))
+    elif result_from == 'Millimeter' and result_to == 'Meter':
+        calculate = number1/1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'm'))
+    elif result_from == 'Millimeter' and result_to == 'Kilometer':
+        calculate = number1/1000000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'km'))
+    # Centimeter to other
+    elif result_from == 'Centimeter' and result_to == 'Millimeter':
+        calculate = number1*10
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mm'))
+    elif result_from == 'Centimeter' and result_to == 'Centimeter':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'cm'))
+    elif result_from == 'Centimeter' and result_to == 'Decimeter':
+        calculate = number1/10
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dm'))
+    elif result_from == 'Centimeter' and result_to == 'Meter':
+        calculate = number1/100
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'm'))
+    elif result_from == 'Centimeter' and result_to == 'Kilometer':
+        calculate = number1/100000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'km'))
+    # Decimeter to other
+    elif result_from == 'Decimeter' and result_to == 'Millimeter':
+        calculate = number1*100
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mm'))
+    elif result_from == 'Decimeter' and result_to == 'Centimeter':
+        calculate = number1*10
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'cm'))
+    elif result_from == 'Decimeter' and result_to == 'Decimeter':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dm'))
+    elif result_from == 'Decimeter' and result_to == 'Meter':
+        calculate = number1/10
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'm'))
+    elif result_from == 'Decimeter' and result_to == 'Kilometer':
+        calculate = number1/10000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'km'))
+    # Meter to other
+    elif result_from == 'Meter' and result_to == 'Millimeter':
+        calculate = number1*1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mm'))
+    elif result_from == 'Meter' and result_to == 'Centimeter':
+        calculate = number1*100
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'cm'))
+    elif result_from == 'Meter' and result_to == 'Decimeter':
+        calculate = number1*10
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dm'))
+    elif result_from == 'Meter' and result_to == 'Meter':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'm'))
+    elif result_from == 'Meter' and result_to == 'Kilometer':
+        calculate = number1/1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'km'))
+    # Kilometer to other
+    elif result_from == 'Kilometer' and result_to == 'Millimeter':
+        calculate = number1*1000000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mm'))
+    elif result_from == 'Kilometer' and result_to == 'Centimeter':
+        calculate = number1*100000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'cm'))
+    elif result_from == 'Kilometer' and result_to == 'Decimeter':
+        calculate = number1*10000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dm'))
+    elif result_from == 'Kilometer' and result_to == 'Meter':
+        calculate = number1*1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'm'))
+    elif result_from == 'Kilometer' and result_to == 'Kilometer':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'km'))
 
 # Selected Function
 def selected(event):
@@ -273,27 +379,27 @@ def selected(event):
                               'Megahertz',
                               'Gigahertz')
     elif unit == 'Length':
-        combo_from['values'] = ('Millimeters',
-                                'Centimeters',
-                                'Decimeters',
-                                'Meters',
-                                'Kilometers')
-        combo_to['values'] = ('Millimeters',
-                              'Centimeters',
-                              'Decimeters',
-                              'Meters',
-                              'Kilometers')
+        combo_from['values'] = ('Millimeter',
+                                'Centimeter',
+                                'Decimeter',
+                                'Meter',
+                                'Kilometer')
+        combo_to['values'] = ('Millimeter',
+                              'Centimeter',
+                              'Decimeter',
+                              'Meter',
+                              'Kilometer')
     elif unit == 'Mass':
         combo_from['values'] = ('Milligram',
                                 'Centigram',
-                                'Grams',
-                                'Decigrams',
-                                'Kilograms')
+                                'Gram',
+                                'DeciGram',
+                                'KiloGram')
         combo_to['values'] = ('Milligram',
                               'Centigram',
-                              'Grams',
-                              'Decigrams',
-                              'Kilograms')
+                              'Gram',
+                              'DeciGram',
+                              'KiloGram')
     elif unit == 'Speed':
         combo_from['values'] = ('Miles per Hour',
                                 'Foot per Second',
@@ -313,16 +419,16 @@ def selected(event):
                               'Fahrenheit',
                               'Kelvin')
     elif unit == 'Volume':
-        combo_from['values'] = ('Cubic Meters',
+        combo_from['values'] = ('Cubic Meter',
                                 'Cubic Foot',
                                 'Liters',
                                 'Gallon',
-                                'Cubic Centimeters')
-        combo_to['values'] = ('Cubic Meters',
+                                'Cubic Centimeter')
+        combo_to['values'] = ('Cubic Meter',
                               'Cubic Foot',
                               'Liters',
                               'Gallon',
-                              'Cubic Centimeters')
+                              'Cubic Centimeter')
     elif unit == 'Time':
         combo_from['values'] = ('Nanosecond',
                                 'Microsecond',
@@ -362,12 +468,12 @@ def tofunc(event):
     result_to = event.widget.get()
 
 # Creating the Unit Converter Label
-label_title = tk.Label(window, text='UNIT CONVERTER', bg='gray', fg='darkblue')
+label_title = tk.Label(window, text='UNIT CONVERTER', bg='cyan2', fg='darkblue')
 label_title['font'] = font_head
 label_title.place(relx='0.5', rely='0.1', anchor='center')
 
 # Creating Unit Lable
-label_unit = tk.Label(window, text='Unit', bg='gray', fg='black')
+label_unit = tk.Label(window, text='Unit', bg='cyan2', fg='black')
 label_unit['font'] = font1
 label_unit.place(relx='0.18', rely='0.25')
 
@@ -389,7 +495,7 @@ combo_unit['values'] = ('Digital Storage',
                     'Time')
 
 # Creating 'From' Lable
-label_from = tk.Label(window, text='From', bg='gray', fg='black')
+label_from = tk.Label(window, text='From', bg='cyan2', fg='black')
 label_from['font'] = font1
 label_from.place(relx=0.18, rely=0.35)
 
@@ -407,7 +513,7 @@ entry_from.place(relx=0.82, rely=0.36)
 convert = partial(convert, entry_f)
 
 # Creating 'To' Lable
-label_to = tk.Label(window, text='To', bg='gray', fg='black')
+label_to = tk.Label(window, text='To', bg='cyan2', fg='black')
 label_to['font'] = font1
 label_to.place(relx=0.18, rely=0.45)
 
@@ -424,7 +530,7 @@ label_result['font'] = font2
 label_result.place(relx=0.21, rely=0.6)
 
 # Creating Convert Button
-btn_convert = tk.Button(window, text='Convert', bg='Cyan1', command=convert)
+btn_convert = tk.Button(window, text='Convert', bg='red', fg='white', command=convert)
 btn_convert['font'] = font1
 btn_convert.place(relx=0.51, rely=0.8, anchor='center')
 
