@@ -609,6 +609,113 @@ def convert(n1):
         label_result.cget('text')
         label_result.configure(text = (calculate, '°K'))
 
+    ## Volume
+    # Cubic Meter to other
+    elif result_from == 'Cubic Meter' and result_to == 'Cubic Meter':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'm³(CBM)'))
+    elif result_from == 'Cubic Meter' and result_to == 'Milliliter':
+        calculate = number1*1000000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mL'))
+    elif result_from == 'Cubic Meter' and result_to == 'Liter':
+        calculate = number1*1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'L(l)'))
+    elif result_from == 'Cubic Meter' and result_to == 'Gallon':
+        calculate = number1*264.172
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'gal'))
+    elif result_from == 'Cubic Meter' and result_to == 'Cubic Centimeter':
+        calculate = number1*1000000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'cm³(ccm/cc)'))
+    # Milliliter to other
+    elif result_from == 'Milliliter' and result_to == 'Cubic Meter':
+        calculate = number1/1000000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'm³(CBM)'))
+    elif result_from == 'Milliliter' and result_to == 'Milliliter':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mL'))
+    elif result_from == 'Milliliter' and result_to == 'Liter':
+        calculate = number1/1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'L(l)'))
+    elif result_from == 'Milliliter' and result_to == 'Gallon':
+        calculate = number1/3785
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'gal'))
+    elif result_from == 'Milliliter' and result_to == 'Cubic Centimeter':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'cm³(ccm/cc)'))
+    # Liter to other
+    elif result_from == 'Liter' and result_to == 'Cubic Meter':
+        calculate = number1/1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'm³(CBM)'))
+    elif result_from == 'Liter' and result_to == 'Milliliter':
+        calculate = number1*1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mL'))
+    elif result_from == 'Liter' and result_to == 'Liter':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'L(l)'))
+    elif result_from == 'Liter' and result_to == 'Gallon':
+        calculate = number1/3.785
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'gal'))
+    elif result_from == 'Liter' and result_to == 'Cubic Centimeter':
+        calculate = number1*1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'cm³(ccm/cc)'))
+    # Gallon to other
+    elif result_from == 'Gallon' and result_to == 'Cubic Meter':
+        calculate = number1/264
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'm³(CBM)'))
+    elif result_from == 'Gallon' and result_to == 'Milliliter':
+        calculate = number1*3785
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mL'))
+    elif result_from == 'Gallon' and result_to == 'Liter':
+        calculate = number1*3.785
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'L(l)'))
+    elif result_from == 'Gallon' and result_to == 'Gallon':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'gal'))
+    elif result_from == 'Gallon' and result_to == 'Cubic Centimeter':
+        calculate = number1*3785
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'cm³(ccm/cc)'))
+    # Cubic Centimeter to other
+    elif result_from == 'Cubic Centimeter' and result_to == 'Cubic Meter':
+        calculate = number1/1000000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'm³(CBM)'))
+    elif result_from == 'Cubic Centimeter' and result_to == 'Milliliter':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'mL'))
+    elif result_from == 'Cubic Centimeter' and result_to == 'Liter':
+        calculate = number1/1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'L(l)'))
+    elif result_from == 'Cubic Centimeter' and result_to == 'Gallon':
+        calculate = number1/3785
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'gal'))
+    elif result_from == 'Cubic Centimeter' and result_to == 'Cubic Centimeter':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'cm³(ccm/cc)'))
+
 
 # Selected Function
 def selected(event):
@@ -677,13 +784,13 @@ def selected(event):
                               'Kelvin')
     elif unit == 'Volume':
         combo_from['values'] = ('Cubic Meter',
-                                'Cubic Foot',
-                                'Liters',
+                                'Milliliter',
+                                'Liter',
                                 'Gallon',
                                 'Cubic Centimeter')
         combo_to['values'] = ('Cubic Meter',
-                              'Cubic Foot',
-                              'Liters',
+                              'Milliliter',
+                              'Liter',
                               'Gallon',
                               'Cubic Centimeter')
     elif unit == 'Time':
