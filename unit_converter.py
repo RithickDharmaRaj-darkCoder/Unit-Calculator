@@ -716,6 +716,599 @@ def convert(n1):
         label_result.cget('text')
         label_result.configure(text = (calculate, 'cm³(ccm/cc)'))
 
+    ## Time
+    # Nanosecond to other
+    elif result_from == 'Nanosecond' and result_to == 'Nanosecond':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ns(nsec)'))
+    elif result_from == 'Nanosecond' and result_to == 'Microsecond':
+        calculate = number1/1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'µs'))
+    elif result_from == 'Nanosecond' and result_to == 'Millisecond':
+        calculate = number1/1000000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ms'))
+    elif result_from == 'Nanosecond' and result_to == 'Second':
+        calculate = number1/1000000000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 's(sec)'))
+    elif result_from == 'Nanosecond' and result_to == 'Minute':
+        calculate = number1/60000000000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'min'))
+    elif result_from == 'Nanosecond' and result_to == 'Hour':
+        calculate = number1/36000000000000      #3.6e+12
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'h(hr)'))
+    elif result_from == 'Nanosecond' and result_to == 'Day':
+        calculate = number1/86400000000000      #8.64e+13
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'd'))
+    elif result_from == 'Nanosecond' and result_to == 'Week':
+        calculate = number1/604800000000000         #6.048e+14
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'week'))
+    elif result_from == 'Nanosecond' and result_to == 'Month':
+        calculate = number1/2628000000000000        #2.628e+15
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'month'))
+    elif result_from == 'Nanosecond' and result_to == 'Year':
+        calculate = number1/31540000000000000       #3.154e+16
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'a(y/yr)'))
+    elif result_from == 'Nanosecond' and result_to == 'Decade':
+        calculate = number1/315400000000000000      #3.154e+17
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dec'))
+    elif result_from == 'Nanosecond' and result_to == 'Century':
+        calculate = number1/3154000000000000000         #3.154e+18
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'century'))
+    # Microsecond to other
+    elif result_from == 'Microsecond' and result_to == 'Nanosecond':
+        calculate = number1*1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ns(nsec)'))
+    elif result_from == 'Microsecond' and result_to == 'Microsecond':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'µs'))
+    elif result_from == 'Microsecond' and result_to == 'Millisecond':
+        calculate = number1/1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ms'))
+    elif result_from == 'Microsecond' and result_to == 'Second':
+        calculate = number1/1000000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 's(sec)'))
+    elif result_from == 'Microsecond' and result_to == 'Minute':
+        calculate = number1/(6*(10**7))         #6e+7
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'min'))
+    elif result_from == 'Microsecond' and result_to == 'Hour':
+        calculate = number1/(3.6*(10**9))       #3.6e+9
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'h(hr)'))
+    elif result_from == 'Microsecond' and result_to == 'Day':
+        calculate = number1/(8.64*(10**10))         #8.64e+10
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'd'))
+    elif result_from == 'Microsecond' and result_to == 'Week':
+        calculate = number1/(6.048*(10**11))        #6.048e+11
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'week'))
+    elif result_from == 'Microsecond' and result_to == 'Month':
+        calculate = number1/(2.628*(10**12))        #2.628e+12
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'month'))
+    elif result_from == 'Microsecond' and result_to == 'Year':
+        calculate = number1/(3.154*(10**13))        #3.154e+13
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'a(y/yr)'))
+    elif result_from == 'Microsecond' and result_to == 'Decade':
+        calculate = number1/(3.154*(10**14))        #3.154e+14
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dec'))
+    elif result_from == 'Microsecond' and result_to == 'Century':
+        calculate = number1/(3.154*(10**15))        #3.154e+15
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'century'))
+    # Millisecond to other
+    elif result_from == 'Millisecond' and result_to == 'Nanosecond':
+        calculate = number1*(1*(10**6))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ns(nsec)'))
+    elif result_from == 'Millisecond' and result_to == 'Microsecond':
+        calculate = number1*1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'µs'))
+    elif result_from == 'Millisecond' and result_to == 'Millisecond':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ms'))
+    elif result_from == 'Millisecond' and result_to == 'Second':
+        calculate = number1/1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 's(sec)'))
+    elif result_from == 'Millisecond' and result_to == 'Minute':
+        calculate = number1/60000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'min'))
+    elif result_from == 'Millisecond' and result_to == 'Hour':
+        calculate = number1/(3.6*(10**6))       #3.6e+6
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'h(hr)'))
+    elif result_from == 'Millisecond' and result_to == 'Day':
+        calculate = number1/(8.64*(10**7))      #8.64e+7
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'd'))
+    elif result_from == 'Millisecond' and result_to == 'Week':
+        calculate = number1/(6.048*(10**8))     #6.048e+8
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'week'))
+    elif result_from == 'Millisecond' and result_to == 'Month':
+        calculate = number1/(2.628*(10**9))     #2.628e+9
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'month'))
+    elif result_from == 'Millisecond' and result_to == 'Year':
+        calculate = number1/(3.154*(10**10))        #3.154e+10
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'a(y/yr)'))
+    elif result_from == 'Millisecond' and result_to == 'Decade':
+        calculate = number1/(3.154*(10**11))        #3.154e+11
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dec'))
+    elif result_from == 'Millisecond' and result_to == 'Century':
+        calculate = number1/(3.154*(10**12))        #3.154e+12
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'century'))
+    # Second to other
+    elif result_from == 'Second' and result_to == 'Nanosecond':
+        calculate = number1*(1*(10**9))     #1e+9
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ns(nsec)'))
+    elif result_from == 'Second' and result_to == 'Microsecond':
+        calculate = number1*(1*(10**6))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'µs'))
+    elif result_from == 'Second' and result_to == 'Millisecond':
+        calculate = number1*1000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ms'))
+    elif result_from == 'Second' and result_to == 'Second':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 's(sec)'))
+    elif result_from == 'Second' and result_to == 'Minute':
+        calculate = number1/60
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'min'))
+    elif result_from == 'Second' and result_to == 'Hour':
+        calculate = number1/3600
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'h(hr)'))
+    elif result_from == 'Second' and result_to == 'Day':
+        calculate = number1/86400
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'd'))
+    elif result_from == 'Second' and result_to == 'Week':
+        calculate = number1/604800
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'week'))
+    elif result_from == 'Second' and result_to == 'Month':
+        calculate = number1/(2.628*(10**6))     #2.628e+6
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'month'))
+    elif result_from == 'Second' and result_to == 'Year':
+        calculate = number1/(3.154*(10**7))     #3.154e+7
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'a(y/yr)'))
+    elif result_from == 'Second' and result_to == 'Decade':
+        calculate = number1/(3.154*(10**8))     #3.154e+8
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dec'))
+    elif result_from == 'Second' and result_to == 'Century':
+        calculate = number1/(3.154*(10**9))     #3.154e+9
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'century'))
+    # Minute to other
+    elif result_from == 'Minute' and result_to == 'Nanosecond':
+        calculate = number1*(6*(10**10))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ns(nsec)'))
+    elif result_from == 'Minute' and result_to == 'Microsecond':
+        calculate = number1*(6*(10**7))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'µs'))
+    elif result_from == 'Minute' and result_to == 'Millisecond':
+        calculate = number1*60000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ms'))
+    elif result_from == 'Minute' and result_to == 'Second':
+        calculate = number1*60
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 's(sec)'))
+    elif result_from == 'Minute' and result_to == 'Minute':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'min'))
+    elif result_from == 'Minute' and result_to == 'Hour':
+        calculate = number1/60
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'h(hr)'))
+    elif result_from == 'Minute' and result_to == 'Day':
+        calculate = number1/1440
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'd'))
+    elif result_from == 'Minute' and result_to == 'Week':
+        calculate = number1/10080
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'week'))
+    elif result_from == 'Minute' and result_to == 'Month':
+        calculate = number1/43800
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'month'))
+    elif result_from == 'Minute' and result_to == 'Year':
+        calculate = number1/525600
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'a(y/yr)'))
+    elif result_from == 'Minute' and result_to == 'Decade':
+        calculate = number1/(5.256*(10**6))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dec'))
+    elif result_from == 'Minute' and result_to == 'Century':
+        calculate = number1/(5.256*(10**7))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'century'))
+    # Hour to other
+    elif result_from == 'Hour' and result_to == 'Nanosecond':
+        calculate = number1*(3.6*(10**12))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ns(nsec)'))
+    elif result_from == 'Hour' and result_to == 'Microsecond':
+        calculate = number1*(3.6*(10**9))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'µs'))
+    elif result_from == 'Hour' and result_to == 'Millisecond':
+        calculate = number1*(3.6*(10**6))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ms'))
+    elif result_from == 'Hour' and result_to == 'Second':
+        calculate = number1*3600
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 's(sec)'))
+    elif result_from == 'Hour' and result_to == 'Minute':
+        calculate = number1*60
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'min'))
+    elif result_from == 'Hour' and result_to == 'Hour':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'h(hr)'))
+    elif result_from == 'Hour' and result_to == 'Day':
+        calculate = number1/24
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'd'))
+    elif result_from == 'Hour' and result_to == 'Week':
+        calculate = number1/168
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'week'))
+    elif result_from == 'Hour' and result_to == 'Month':
+        calculate = number1/730
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'month'))
+    elif result_from == 'Hour' and result_to == 'Year':
+        calculate = number1/8760
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'a(y/yr)'))
+    elif result_from == 'Hour' and result_to == 'Decade':
+        calculate = number1/87600
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dec'))
+    elif result_from == 'Hour' and result_to == 'Century':
+        calculate = number1/876000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'century'))
+    # Day to other
+    elif result_from == 'Day' and result_to == 'Nanosecond':
+        calculate = number1*(8.64*(10**13))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ns(nsec)'))
+    elif result_from == 'Day' and result_to == 'Microsecond':
+        calculate = number1*(8.64*(10**10))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'µs'))
+    elif result_from == 'Day' and result_to == 'Millisecond':
+        calculate = number1*(8.64*(10**7))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ms'))
+    elif result_from == 'Day' and result_to == 'Second':
+        calculate = number1*86400
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 's(sec)'))
+    elif result_from == 'Day' and result_to == 'Minute':
+        calculate = number1*1440
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'min'))
+    elif result_from == 'Day' and result_to == 'Hour':
+        calculate = number1*24
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'h(hr)'))
+    elif result_from == 'Day' and result_to == 'Day':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'd'))
+    elif result_from == 'Day' and result_to == 'Week':
+        calculate = number1/7
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'week'))
+    elif result_from == 'Day' and result_to == 'Month':
+        calculate = number1/30.417
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'month'))
+    elif result_from == 'Day' and result_to == 'Year':
+        calculate = number1/365
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'a(y/yr)'))
+    elif result_from == 'Day' and result_to == 'Decade':
+        calculate = number1/3650
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dec'))
+    elif result_from == 'Day' and result_to == 'Century':
+        calculate = number1/36500
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'century'))
+    # Week to other
+    elif result_from == 'Week' and result_to == 'Nanosecond':
+        calculate = number1*(6.048*(10**14))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ns(nsec)'))
+    elif result_from == 'Week' and result_to == 'Microsecond':
+        calculate = number1*(6.048*(10**11))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'µs'))
+    elif result_from == 'Week' and result_to == 'Millisecond':
+        calculate = number1*(6.048*(10**8))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ms'))
+    elif result_from == 'Week' and result_to == 'Second':
+        calculate = number1*604800
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 's(sec)'))
+    elif result_from == 'Week' and result_to == 'Minute':
+        calculate = number1*10080
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'min'))
+    elif result_from == 'Week' and result_to == 'Hour':
+        calculate = number1*168
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'h(hr)'))
+    elif result_from == 'Week' and result_to == 'Day':
+        calculate = number1*7
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'd'))
+    elif result_from == 'Week' and result_to == 'Week':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'week'))
+    elif result_from == 'Week' and result_to == 'Month':
+        calculate = number1/4.345
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'month'))
+    elif result_from == 'Week' and result_to == 'Year':
+        calculate = number1/52.143
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'a(y/yr)'))
+    elif result_from == 'Week' and result_to == 'Decade':
+        calculate = number1/521.43
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dec'))
+    elif result_from == 'Week' and result_to == 'Century':
+        calculate = number1/5214.3
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'century'))
+    # Month to other
+    elif result_from == 'Month' and result_to == 'Nanosecond':
+        calculate = number1*(2.628*(10**15))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ns(nsec)'))
+    elif result_from == 'Month' and result_to == 'Microsecond':
+        calculate = number1*(2.628*(10**12))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'µs'))
+    elif result_from == 'Month' and result_to == 'Millisecond':
+        calculate = number1*(2.628*(10**9))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ms'))
+    elif result_from == 'Month' and result_to == 'Second':
+        calculate = number1*(2.628*(10**6))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 's(sec)'))
+    elif result_from == 'Month' and result_to == 'Minute':
+        calculate = number1*43800
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'min'))
+    elif result_from == 'Month' and result_to == 'Hour':
+        calculate = number1*730.001
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'h(hr)'))
+    elif result_from == 'Month' and result_to == 'Day':
+        calculate = number1*30.4167
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'd'))
+    elif result_from == 'Month' and result_to == 'Week':
+        calculate = number1*4.34524
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'week'))
+    elif result_from == 'Month' and result_to == 'Month':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'month'))
+    elif result_from == 'Month' and result_to == 'Year':
+        calculate = number1/12
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'a(y/yr)'))
+    elif result_from == 'Month' and result_to == 'Decade':
+        calculate = number1/120
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dec'))
+    elif result_from == 'Month' and result_to == 'Century':
+        calculate = number1/1200
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'century'))
+    # Year to other
+    elif result_from == 'Year' and result_to == 'Nanosecond':
+        calculate = number1*(3.154*(10**16))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ns(nsec)'))
+    elif result_from == 'Year' and result_to == 'Microsecond':
+        calculate = number1*(3.154*(10**13))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'µs'))
+    elif result_from == 'Year' and result_to == 'Millisecond':
+        calculate = number1*(3.154*(10**10))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ms'))
+    elif result_from == 'Year' and result_to == 'Second':
+        calculate = number1*(3.154*(10**7))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 's(sec)'))
+    elif result_from == 'Year' and result_to == 'Minute':
+        calculate = number1*525600
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'min'))
+    elif result_from == 'Year' and result_to == 'Hour':
+        calculate = number1*8760
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'h(hr)'))
+    elif result_from == 'Year' and result_to == 'Day':
+        calculate = number1*365
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'd'))
+    elif result_from == 'Year' and result_to == 'Week':
+        calculate = number1*52.1429
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'week'))
+    elif result_from == 'Year' and result_to == 'Month':
+        calculate = number1*12
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'month'))
+    elif result_from == 'Year' and result_to == 'Year':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'a(y/yr)'))
+    elif result_from == 'Year' and result_to == 'Decade':
+        calculate = number1/10
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dec'))
+    elif result_from == 'Year' and result_to == 'Century':
+        calculate = number1/100
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'century'))
+    # Decade to other
+    elif result_from == 'Decade' and result_to == 'Nanosecond':
+        calculate = number1*(3.154*(10**17))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ns(nsec)'))
+    elif result_from == 'Decade' and result_to == 'Microsecond':
+        calculate = number1*(3.154*(10**14))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'µs'))
+    elif result_from == 'Decade' and result_to == 'Millisecond':
+        calculate = number1*(3.154*(10**11))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ms'))
+    elif result_from == 'Decade' and result_to == 'Second':
+        calculate = number1*(3.154*(10**8))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 's(sec)'))
+    elif result_from == 'Decade' and result_to == 'Minute':
+        calculate = number1*(5.256*(10**6))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'min'))
+    elif result_from == 'Decade' and result_to == 'Hour':
+        calculate = number1*87600
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'h(hr)'))
+    elif result_from == 'Decade' and result_to == 'Day':
+        calculate = number1*3650
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'd'))
+    elif result_from == 'Decade' and result_to == 'Week':
+        calculate = number1*521.429
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'week'))
+    elif result_from == 'Decade' and result_to == 'Month':
+        calculate = number1*120
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'month'))
+    elif result_from == 'Decade' and result_to == 'Year':
+        calculate = number1*10
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'a(y/yr)'))
+    elif result_from == 'Decade' and result_to == 'Decade':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dec'))
+    elif result_from == 'Decade' and result_to == 'Century':
+        calculate = number1/10
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'century'))
+    # Century to other
+    elif result_from == 'Century' and result_to == 'Nanosecond':
+        calculate = number1*(3.154*(10**18))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ns(nsec)'))
+    elif result_from == 'Century' and result_to == 'Microsecond':
+        calculate = number1*(3.154*(10**15))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'µs'))
+    elif result_from == 'Century' and result_to == 'Millisecond':
+        calculate = number1*(3.154*(10**12))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'ms'))
+    elif result_from == 'Century' and result_to == 'Second':
+        calculate = number1*(3.154*(10**9))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 's(sec)'))
+    elif result_from == 'Century' and result_to == 'Minute':
+        calculate = number1*(5.256*(10**7))
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'min'))
+    elif result_from == 'Century' and result_to == 'Hour':
+        calculate = number1*876000
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'h(hr)'))
+    elif result_from == 'Century' and result_to == 'Day':
+        calculate = number1*36500
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'd'))
+    elif result_from == 'Century' and result_to == 'Week':
+        calculate = number1*5214.29
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'week'))
+    elif result_from == 'Century' and result_to == 'Month':
+        calculate = number1*1200
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'month'))
+    elif result_from == 'Century' and result_to == 'Year':
+        calculate = number1*100
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'a(y/yr)'))
+    elif result_from == 'Century' and result_to == 'Decade':
+        calculate = number1*10
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'dec'))
+    elif result_from == 'Century' and result_to == 'Century':
+        calculate = number1
+        label_result.cget('text')
+        label_result.configure(text = (calculate, 'century'))
+    else:
+        label_result.cget('text')
+        label_result.configure(text='Select the unit properly!')
+        messagebox.showerror('Warning', 'Select the unit properly!')
 
 # Selected Function
 def selected(event):
