@@ -11,10 +11,14 @@ window.geometry('500x500')
 window.title('Unit Converter')
 window.configure(bg = 'cyan2')
 
+#Changing icon
+icon = tk.PhotoImage(file='C:/Users/Pika pie/Pictures/Saved Pictures/Logo.png')
+window.iconphoto(True, icon)
+
 # Creating the Fonts
 font_head = font.Font(family='helvetica', size='25')
-font1 = font.Font(family='helvetica', size='15')
-font2 = font.Font(family='helvetica', size='20')
+font1 = font.Font(family='Ariel', size='15')
+font2 = font.Font(family='Comic Sans', size='20')
 
 # [All Functions]
 # Convert Function
@@ -1425,7 +1429,10 @@ def tofunc(event):
     result_to = event.widget.get()
 
 # Creating the Unit Converter Label
-label_title = tk.Label(window, text='UNIT CONVERTER', bg='cyan2', fg='darkblue')
+label_title = tk.Label(window,
+                       text='UNIT CONVERTER',
+                       bg='cyan2',
+                       fg='darkblue')
 label_title['font'] = font_head
 label_title.place(relx='0.5', rely='0.1', anchor='center')
 
@@ -1482,12 +1489,12 @@ combo_to.current()
 combo_to.bind('<<ComboboxSelected>>', tofunc)
 
 # Creating Result_section Lable
-label_result =tk.Label(window, text='', bg='white', width=28)
+label_result = tk.Label(window, text='', bg='white', width=28, relief=tk.GROOVE, bd=5)
 label_result['font'] = font2
 label_result.place(relx=0.045, rely=0.6)
 
 # Creating Convert Button
-btn_convert = tk.Button(window, text='Convert', bg='red', fg='white', command=convert)
+btn_convert = tk.Button(window, text='Convert', bg='red', fg='white', relief=tk.RAISED, bd=5, activeforeground='white', activebackground='#00ff00',command=convert)
 btn_convert['font'] = font1
 btn_convert.place(relx=0.51, rely=0.8, anchor='center')
 
