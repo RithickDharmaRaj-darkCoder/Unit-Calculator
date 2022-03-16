@@ -1314,6 +1314,8 @@ def convert(n1):
         label_result.configure(text='Select the unit properly!')
         messagebox.showerror('Warning', 'Select the unit properly!')
 
+    entry_from.delete(0, tk.END)
+
 # Selected Function
 def selected(event):
     unit = event.widget.get()
